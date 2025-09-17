@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Etu 💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        
+        .page {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 20px;
+        }
+        
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #e91e63;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .bear-gif {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            margin: 20px auto;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        @keyframes crying {
+            0%, 100% { transform: scale(1) rotate(-2deg); }
+            50% { transform: scale(1.1) rotate(2deg); }
+        }
+        
+        @keyframes sadShake {
+            0%, 100% { transform: translateX(0) scale(1); }
+            25% { transform: translateX(-3px) scale(0.98); }
+            75% { transform: translateX(3px) scale(0.98); }
+        }
+        
+        @keyframes loveFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-8px) scale(1.05); }
+        }
+        
+        @keyframes hugBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes kissFloat {
+            0%, 100% { transform: translateY(0) rotate(-1deg); }
+            33% { transform: translateY(-5px) rotate(1deg); }
+            66% { transform: translateY(-3px) rotate(-0.5deg); }
+        }
+        
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        
+        @keyframes pleadBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-6px) scale(1.05); }
+        }
+        
+        @keyframes happyDance {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-5deg) scale(1.05); }
+            75% { transform: rotate(5deg) scale(1.05); }
+        }
+        
+        .text {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #ff9a9e, #fecfef);
+            padding: 2px 8px;
+            border-radius: 10px;
+            color: #8e1538;
+            font-weight: 600;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,107,157,0.4);
+        }
+        
+        .emoji-big {
+            font-size: 60px;
+            margin: 15px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .hearts {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            opacity: 0;
+            animation: heartFloat 2s ease-out;
+        }
+        
+        @keyframes heartFloat {
+            0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            100% { opacity: 0; transform: translateX(-50%) translateY(-100px); }
+        }
+        
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .progress {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b9d, #c44569);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 2rem; }
+            .text { font-size: 1.1rem; }
+            .card { padding: 30px 20px; margin: 10px; }
+            .bear-gif { width: 120px; height: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: First Apology -->
+    <div class="page active" id="page1">
+        <div class="progress">
+            <div class="progress-bar" style="width: 12.5%"></div>
+        </div>
+        <div class="card">
+            <h1 class="title">I'm Sorry Etu 💔</h1>
+            <!-- SLOT 1: Add your "Sorry/Crying Bear" GIF URL here -->
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/dsFB5Yfh/slot-1.gif" alt="slot-1" border="0"></a>            <div class="emoji-big">😭</div>
+            <p class="text">I made you cry yesterday...</p>
+            <p class="text">I feel <span class="highlight">terrible</span></p>
+            <button class="btn" onclick="nextPage()">💔 Continue 💔</button>
+        </div>
+    </div>
+
+    <!-- Page 2: How Sorry I Am -->
+    <div class="page" id="page2">
+        <div class="progress">
+            <div class="progress-bar" style="width: 25%"></div>
+        </div>
+        <div class="card">
+            <h1 class="title">I Hate Myself 😢</h1>
+            <!-- SLOT 2: Add your "Sad/Regretful Bear" GIF URL here -->
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/QjX7Xxj3/slot-2.gif" alt="slot-2" border="0"></a>            <div class="emoji-big">💔</div>
+            <p class="text">Your tears broke my heart</p>
+            <p class="text">I never want to see you sad</p>
+            <button class="btn" onclick="nextPage()">😭 I'm Sorry 😭</button>
+        </div>
+    </div>
+
+    <!-- Page 3: You Mean Everything -->
+    <div class="page" id="page3">
+        <div class="progress">
+            <div class="progress-bar" style="width: 37.5%"></div>
+        </div>
+        <div class="card">
+            <h1 class="title">You're My Everything 💕</h1>
+            <!-- SLOT 3: Add your "Love/Romantic Bear" GIF URL here -->
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/pjG0sb0r/slot-7.gif" alt="slot-7" border="0"></a>            <div class="emoji-big">🙏</div>
+            <p class="text">Without you, I'm nothing</p>
+            <button class="btn" onclick="nextPage()">👑 My Queen 👑</button>
+        </div>
+    </div>
+
+    <!-- Page 4: I Promise -->
+    <div class="page" id="page4">
+        <div class="progress">
+            <div class="progress-bar" style="width: 50%"></div>
+        </div>
+        <div class="card">
+            <h1 class="title">I Promise 🤝</h1>
+            <!-- SLOT 4: Add your "Hug/Promise Bear" GIF URL here -->
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/mr6Xnnj7/slot-4.gif" alt="slot-4" border="0"></a>            <div class="emoji-big">🤝</div>
+            <p class="text">I'll never hurt you again</p>
+            <p class="text">I'll be <span class="highlight">better</span></p>
+            <button class="btn" onclick="nextPage()">💖 Promise 💖</button>
+        </div>
+    </div>
+
+    <!-- Page 5: What I Love About You -->
+    <div class="page" id="page5">
+        <div class="progress">
+            <div class="progress-bar" style="width: 62.5%"></div>
+        </div>
+        <div class="card">
+            <h1 class="title">Why I Love You 💕</h1>
+            <!-- SLOT 5: Add your "Kiss/Cute Bear" GIF URL here -->
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/HL8zqqqm/slot-5.gif" alt="slot-5" border="0"></a>            <div class="emoji-big">✨</div>
+            <p class="text">Your beautiful smile</p>
+            <p class="text">Your <span class="highlight">kind heart</span></p>
+            <p class="text">Everything about you!</p>
+            <button class="btn" onclick="nextPage()">😍 More Love 😍</button>
+        </div>
+    </div>
+
+    <!-- Page 6: Interactive Love -->
+    <div class="page" id="page6">
+        <div class="progress">
+            <div class="progress-bar" style="width: 75%"></div>
+        </div>
+        <div class="card">
+            <h1 class="title">Click for Love! 💖</h1>
+            <!-- SLOT 6: Add your "Heart/Interactive Love Bear" GIF URL here -->
+            <img src="https://i.ibb.co/MkN9BfRS/slot-6.gif" alt="Heart Bear" class="bear-gif" onclick="showLove()">
+            <p class="text">Click the bears!</p>
+            <p class="text" id="loveCounter">Love clicks: 0</p>
+            <button class="btn" onclick="nextPage()">🎁 Surprise 🎁</button>
+        </div>
+    </div>
+
+    <!-- Page 7: Forgive Me -->
+    <div class="page" id="page7">
+        <div class="progress">
+            <div class="progress-bar" style="width: 87.5%"></div>
+        </div>
+        <div class="card">
+            <h1 class="title">Forgive Me? 🥺</h1>
+            <!-- SLOT 7: Add your "Please/Begging Bear" GIF URL here -->
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/TBfLp85Q/slot-3.gif" alt="slot-3" border="0"></a>            <p class="text">Please give me another chance</p>
+            <p class="text">I love you <span class="highlight">so much</span></p>
+            <button class="btn" onclick="nextPage()">💕 Final Page 💕</button>
+        </div>
+    </div>
+
+    <!-- Page 8: Final Love -->
+    <div class="page" id="page8">
+        <div class="progress">
+            <div class="progress-bar" style="width: 100%"></div>
+        </div>
+        <div class="card">
+            <h1 class="title">I Love You Etu 💕</h1>
+            <!-- SLOT 8: Add your "Happy/Celebration Bear" GIF URL here -->
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/tMnsZ7T8/kiss-milk-and-mocha-unscreen.gif" alt="kiss-milk-and-mocha-unscreen" border="0"></a>            <div class="emoji-big" id="finalEmoji">💖</div>
+            <p class="text">Forever and always</p>
+            <p class="text"><span class="highlight">You're my everything</span></p>
+            <button class="btn" onclick="restart()">🔄 Start Over 🔄</button>
+            <button class="btn" onclick="explodeLove()">💥 Love Explosion! 💥</button>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        let loveClicks = 0;
+        const totalPages = 8;
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                document.getElementById(`page${currentPage}`).classList.remove('active');
+                currentPage++;
+                setTimeout(() => {
+                    document.getElementById(`page${currentPage}`).classList.add('active');
+                }, 100);
+            }
+        }
+
+        function restart() {
+            document.getElementById(`page${currentPage}`).classList.remove('active');
+            currentPage = 1;
+            setTimeout(() => {
+                document.getElementById('page1').classList.add('active');
+            }, 100);
+        }
+
+        function clickBear(pageNum) {
+            const bear = document.querySelector(`#page${pageNum} .bear-gif`);
+            bear.classList.add('shake');
+            
+            // Create floating hearts
+            createHearts();
+            
+            setTimeout(() => {
+                bear.classList.remove('shake');
+            }, 500);
+        }
+
+        function showLove() {
+            loveClicks++;
+            document.getElementById('loveCounter').textContent = `Love clicks: ${loveClicks}`;
+            
+            const emojis = ['💕', '💖', '💗', '💓', '💝', '❤️', '💘', '💞'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            document.getElementById('loveEmoji').textContent = randomEmoji;
+            
+            clickBear(6);
+            
+            if (loveClicks === 10) {
+                alert('🎉 You unlocked extra love! You clicked 10 times! 🎉');
+            }
+        }
+
+        function finalClick() {
+            const emojis = ['💖', '💕', '💗', '💓', '💝', '❤️', '💘', '💞', '🥰', '😍'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            document.getElementById('finalEmoji').textContent = randomEmoji;
+            
+            clickBear(8);
+        }
+
+        function createHearts() {
+            const hearts = document.createElement('div');
+            hearts.className = 'hearts';
+            hearts.innerHTML = '💕💖💗';
+            document.body.appendChild(hearts);
+            
+            setTimeout(() => {
+                hearts.remove();
+            }, 2000);
+        }
+
+        function explodeLove() {
+            // Create multiple heart explosions
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * window.innerWidth + 'px';
+                    heart.style.top = Math.random() * window.innerHeight + 'px';
+                    heart.style.fontSize = '30px';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.zIndex = '1000';
+                    heart.innerHTML = ['💕', '💖', '💗', '💓', '💝'][Math.floor(Math.random() * 5)];
+                    heart.style.animation = 'heartFloat 2s ease-out forwards';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 2000);
+                }, i * 100);
+            }
+            
+            // Show special message
+            setTimeout(() => {
+                alert('💖 LOVE EXPLOSION! You are my everything, Etu! 💖');
+            }, 1000);
+        }
+
+        // Add some automatic floating hearts
+        setInterval(() => {
+            if (Math.random() < 0.3) {
+                createHearts();
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
